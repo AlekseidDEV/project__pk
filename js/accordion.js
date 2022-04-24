@@ -12,6 +12,7 @@
 // }
 
 const contents = document.querySelectorAll('.program-line__content')
+const ContentsDescr = document.querySelectorAll('.program-line__descr')
 
 
 
@@ -23,10 +24,18 @@ contents.forEach((elem) =>{
 
     // }
   title.addEventListener('click', () =>{
-    descr.classList.toggle('active');
+    ContentsDescr.forEach((tab) =>{
+      if (tab === descr) {
+       tab.classList.add('active')
+       console.dir(tab.clientHeight);
+      } else {
+        tab.classList.remove('active')
+      }
+    })
   })
 
 })
+
 
 
 
